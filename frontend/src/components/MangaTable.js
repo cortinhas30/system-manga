@@ -20,7 +20,32 @@ const MangaTable = () => {
     console.log("mangas: ", mangas);
 
   return (
-    <div>MangaTable</div>
+    <div>
+        <table className='w-full divide-y divide-gray-200'>
+            <thead className="bg-gray-200">
+                <tr>
+                    <th>id</th>
+                    <th>nome</th>
+                    <th>autor</th>
+                    <th>volumes</th>
+                    <th>demografia</th>
+                    <th>genero</th>
+                </tr>
+            </thead>
+            <tbody className='bg-gray-300 p-5'>
+                {mangas.map((item, index) => {
+                   return <tr key={index}>
+                        <td className='text-black'>{item.id_obra}</td>
+                        <td>{item.nome_obra}{console.log(item.nome_obra)}</td>
+                        <td>{item.autor}</td>
+                        <td>{item.volumes}</td>
+                        <td>{item.demografia}</td>
+                        <td>{item.genero}</td>
+                    </tr>;
+                })}
+            </tbody>
+        </table>
+    </div>
   )
 };
 
